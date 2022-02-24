@@ -1,0 +1,8 @@
+****************Les Membres du groupe**************
+- Mariam Issa NOKOUR = Maquette
+
+- Khadidiatou BEYE = Font-end
+- Souleymane KAMARA = Font-end
+
+- Amine GBADAMASSI = Back-end
+- Aly NDIAYE = Back-end
