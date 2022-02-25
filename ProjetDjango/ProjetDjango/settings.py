@@ -130,7 +130,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'projetdjango22@gmail.com' #Notre mail
-EMAIL_HOST_PASSWORD = 'projetdjangoDAR' #le mot de passe de notre mail
+EMAIL_HOST_PASSWORD = 'rmuqyjtbrryvddpy' #le mot de passe de notre mail
 
 
 # Default primary key field type
