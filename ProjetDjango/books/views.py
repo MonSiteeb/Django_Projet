@@ -26,4 +26,5 @@ def subscribe(request):
         recepient = str(sub['email'].value())
         send_mail(subject, 
             message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+        return render(request, 'success.html', {'recepient': recepient})
     return render(request, 'contact.html', {'form':sub})
