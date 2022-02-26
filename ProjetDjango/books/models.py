@@ -24,12 +24,12 @@ class Newsletter(models.Model):
     def __str__(self):
         return self.email
 
-class MailMessage(models.Model):
-    title = models.CharField(max_length=100, null=True)
-    message = models.TextField(null=True)
+# class MailMessage(models.Model):
+#     title = models.CharField(max_length=100, null=True)
+#     message = models.TextField(null=True)
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
