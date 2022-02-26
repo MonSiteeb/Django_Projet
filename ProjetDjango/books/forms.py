@@ -86,4 +86,71 @@ class UserAdminChangeForm(forms.ModelForm):
         # Regardless of what the user provides, return the initial value.
         # This is done here, rather than on the field, because the
         # field does not have access to the initial value
-        return self.initial["password"]
+        return self.initial["password"]   
+    
+class DocumentForm(forms.Form):
+    matiere = forms.CharField(
+        max_length=30,
+        required=True,
+        strip=True,
+        min_length=2,
+        widget=forms.TextInput(
+            attrs={
+                'type' : 'text'
+            }
+        )
+    )
+    classe = forms.CharField(
+        max_length=30,
+        required=True,
+        strip=True,
+        min_length=2,
+        widget=forms.TextInput(
+            attrs={
+                'type' : 'text'
+            }
+        )
+    )
+    
+    professeur = forms.CharField(
+        max_length=40,
+        required=True,
+        strip=True,
+        min_length=2,
+        widget=forms.TextInput(
+            attrs={
+                'type' : 'text'
+            }
+        )
+    )
+    
+    type = forms.ChoiceField(
+        required=True,
+        choices=[('epreuve', 'Epreuve'), ('correction', 'Correction')],
+        widget=forms.Select(
+            attrs={
+                'type':'select'
+            }
+        )
+    )
+    
+    fichier = forms.FileField(
+        required=True,
+        widget=forms.Select(
+            attrs={
+                'type':'upload'
+            }
+        )
+    )
+
+class Subscribe(forms.Form):
+    email = forms.EmailField(
+        required=True,
+        widget=forms.EmailInput(
+            attrs={
+                'type':'email'
+            }
+        )
+    )
+    def __str__(self):
+        return self.email

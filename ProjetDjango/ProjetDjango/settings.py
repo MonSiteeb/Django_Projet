@@ -139,3 +139,6 @@ EMAIL_HOST_PASSWORD = 'rmuqyjtbrryvddpy' #le mot de passe de notre mail
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'books.User'
+
+FROM_EMAIL = 'ndiayealy99@gmail.com'
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
