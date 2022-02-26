@@ -15,7 +15,7 @@ def index(request,*args, **kwargs):
         'docs' : docs,
         'users' : users,
                }
-    return render(request=request, template_name=template_name, context=context)
+    return render(request, 'index.html', context=context)
 
 def subscribe(request):
     sub = Subscribe()
@@ -28,3 +28,6 @@ def subscribe(request):
             message, EMAIL_HOST_USER, [recepient], fail_silently = False)
         return render(request, 'success.html', {'recepient': recepient})
     return render(request, 'contact.html', {'form':sub})
+
+
+
