@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Document,Newsletter
+from .models import Document
 
 from django.contrib import admin
 
@@ -48,4 +48,4 @@ admin.site.register(User, UserAdmin)
 
 admin.site.register(Document)
 # admin.site.register(MailMessage)
-admin.site.register(Newsletter)
+# admin.site.register(Newsletter)
