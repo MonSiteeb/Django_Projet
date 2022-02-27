@@ -11,10 +11,11 @@
     </h3>
     <form method="POST">
         <!-- Very Important csrf Token -->
+        {% load crispy_forms_tags %}
         {% csrf_token %}
         <div class = "form-group">
             <p>
-            <h3>{{ form.as_p }}</h3>
+            <h3>{{ form|crispy }}</h3>
         </p>
             <br>
             <input type="submit" name="Subscribe" class = 'btn btn-primary btn-lg'>

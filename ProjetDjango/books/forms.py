@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.contrib.auth.forms import UserCreationForm,ReadOnlyPasswordHashField
 
 User = get_user_model()
 
@@ -152,5 +152,8 @@ class Subscribe(forms.Form):
             }
         )
     )
-    def __str__(self):
-        return self.email
+
+class UserForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = get_user_model()
+        fields = ('email', 'is_from_esmt')
