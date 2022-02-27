@@ -81,7 +81,7 @@ class User(AbstractBaseUser):
         unique=True,
     )
     is_active = models.BooleanField(default=True)
-    is_from_esmt = models.BooleanField(default=True)
+    is_from_esmt = models.BooleanField()
     staff = models.BooleanField(default=False) # a admin user; non super-user
     admin = models.BooleanField(default=False) # a superuser
 

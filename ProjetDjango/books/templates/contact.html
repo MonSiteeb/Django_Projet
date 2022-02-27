@@ -10,6 +10,7 @@
         <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;'>DataFlair Django Tutorials
     </h3>
     <form method="POST">
+        {% load crispy_forms_tags %}
         <!-- Very Important csrf Token -->
         {% load crispy_forms_tags %}
         {% csrf_token %}
