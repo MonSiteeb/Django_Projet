@@ -9,6 +9,7 @@ from ProjetDjango.settings import EMAIL_HOST_USER
 from books.forms import DocumentForm,Subscribe
 from books.models import Document, User
 
+
 # Create your views here.
 def index(request,*args, **kwargs):
     users = User.objects.all()
@@ -30,6 +31,7 @@ def subscribe(request):
             message, EMAIL_HOST_USER, [recepient], fail_silently = False)
         return render(request, 'success.html', {'recepient': recepient})
     return render(request, 'contact.html', {'form':sub})
+
 
 def inscription(request,*args, **kwargs):
     template_name = 'inscription.html'
@@ -60,3 +62,17 @@ def inscription(request,*args, **kwargs):
                 context=context
             )
 
+def document(request):
+    #now it is empty book form for sending to html
+    form=DocumentForm()
+    if request.method=='POST':
+        #now this form have data from html
+        form=DocumentForm(request.POST)
+        if form.is_valid():
+            user=form.save()
+            return render(request,'docajouter.html',{'form':form})
+    return render(request,'document.html',{'form':form})
+
+
+def logout(request):
+    return render(request,'registration/logout.html')
