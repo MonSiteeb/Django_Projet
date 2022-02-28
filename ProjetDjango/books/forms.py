@@ -137,11 +137,11 @@ class DocumentForm(forms.Form):
     
     fichier = forms.FileField(
         required=True,
-        widget=forms.Select(
-            attrs={
-                'type':'upload'
-            }
-        )
+        # widget=forms.Select(
+        #     attrs={
+        #         'type':'upload'
+        #     }
+        # )
     )
 
 class Subscribe(forms.Form):

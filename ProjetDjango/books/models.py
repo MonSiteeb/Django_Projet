@@ -12,7 +12,7 @@ class Document(models.Model):
     classe=models.CharField(max_length=30)
     professeur=models.CharField(max_length=40)
     categorie=models.CharField(max_length=10,choices=catchoice,default='Epreuve')
-    fichier=models.FileField()
+    fichier=models.FileField(upload_to ='media')
     def __str__(self):
         return str(self.categorie)+" "+str(self.matiere)+"["+str(self.classe)+']'
 

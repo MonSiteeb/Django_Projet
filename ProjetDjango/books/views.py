@@ -62,14 +62,15 @@ def inscription(request,*args, **kwargs):
                 context=context
             )
 
-def document(request):
+def document(request): 
+    # ajout document
     #now it is empty book form for sending to html
     form=DocumentForm()
     if request.method=='POST':
         #now this form have data from html
-        form=DocumentForm(request.POST)
+        form=DocumentForm(request.POST , request.FILES)
         if form.is_valid():
-            user=form.save()
+            form.save()
             return render(request,'docajouter.html',{'form':form})
     return render(request,'document.html',{'form':form})
 
