@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Liste des épreuves et corrigés</h1>
+<div class="container">
+    <div class="row">
+        {% for doc in docs%}
+        <div class="card col-4" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Document {{doc.id}}</h5>
+                <p class="card-text">Matière : <strong>{{doc.matiere}}</strong></p>
+                <p class="card-text">Filière : <strong>{{doc.classe}}</strong></p>
+                <p class="card-text">Professeur : <strong>{{doc.professeur}}</strong></p>
+                <p class="card-text">Type : <strong>{{doc.categorie}}</strong></p>
+                <p class="card-text">Fichier : <a href="{{MEDIA_URL}}/{{doc.fichier}}"><strong>{{doc.fichier}}</strong></a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+  
+{% endblock %}

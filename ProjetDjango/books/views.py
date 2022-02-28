@@ -59,4 +59,9 @@ def inscription(request,*args, **kwargs):
                 template_name=template_name,
                 context=context
             )
-
+def liste_docs(request,*args, **kwargs):
+    docs = Document.objects.all()
+    context = {
+        'docs' : docs,
+               }
+    return render(request, 'liste_documents.html', context=context)
