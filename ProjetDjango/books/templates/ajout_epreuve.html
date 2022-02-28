@@ -1,0 +1,330 @@
+{% extends 'base2.html' %}
+{% block 'title' %}
+Page d'ajout Epreuve
+{% endblock %}
+{% block 'css' %}
+<style>
+    html{
+        position: relative;
+        width: 1440px;
+        height: 2210px;
+
+        background: #FFFFFF;
+    }
+    .card{
+        position: absolute;
+        width: 1350px;
+        height: 312px;
+        left: 45px;
+        top: 60px;
+
+        background: #9F7177;
+        border-radius: 30px;
+    }
+    p{
+        position: absolute;
+        width: 747px;
+        height: 149px;
+        left: 500px;
+        top: 0px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 70px;
+        line-height: 119px;
+
+        color: #000000;
+ 
+    }
+    h3{
+        position: absolute;
+        width: 823px;
+        height: 59px;
+        left: 454px;
+        top: 700px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 80px;
+        line-height: 94px;
+
+        color: #000000; 
+    }
+    #matiere{
+        position: absolute;
+        width: 225px;
+        height: 42px;
+        left: 378px;
+        top: 1006px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 53px;
+
+        color: #000000;
+    }
+    #inputMatiere{
+        position: absolute;
+        width: 930px;
+        height: 60px;
+        left: 298px;
+        top: 1050px;
+
+        background: #FFFFFF;
+        border: 6px solid #9F7177;
+        box-sizing: border-box;
+        border-radius: 30px; 
+    }
+    #filiere{
+        position: absolute;
+        width: 225px;
+        height: 42px;
+        left: 378px;
+        top: 1173px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 53px;
+
+        color: #000000;
+    }
+    #inputFiliere{
+        position: absolute;
+        width: 930px;
+        height: 60px;
+        left: 298px;
+        top: 1215px;
+
+        background: #FFFFFF;
+        border: 6px solid #9F7177;
+        box-sizing: border-box;
+        border-radius: 30px;
+    }
+    #annee{
+        position: absolute;
+        width: 225px;
+        height: 42px;
+        left: 378px;
+        top: 1330px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 53px;
+
+        color: #000000;
+    }
+    #inputAnnee{
+        position: absolute;
+        width: 930px;
+        height: 60px;
+        left: 298px;
+        top: 1371px;
+
+        background: #FFFFFF;
+        border: 6px solid #9F7177;
+        box-sizing: border-box;
+        border-radius: 30px;
+    }
+    #fichier{
+        position: absolute;
+        width: 225px;
+        height: 42px;
+        left: 378px;
+        top: 1510px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 53px;
+
+        color: #000000;
+    }
+    #upload{
+        position: absolute;
+        width: 244px;
+        height: 42px;
+        left: 746px;
+        top: 1520px;
+
+        background: #F6E7D6;
+        border: 6px solid #9F7177;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    button{
+        position: absolute;
+        width: 527px;
+        height: 62px;
+        left: 476px;
+        top: 1630px;
+
+        background: #9F7177;
+        border: 6px solid #9F7177;
+        box-sizing: border-box;
+        border-radius: 20px;
+
+    }
+    #ajouter{
+        position: absolute;
+        width: 224px;
+        height: 42px;
+        left: 673px;
+        top: 1398px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 53px;
+
+        color: #000000;
+    }
+    span{
+        position: absolute;
+        width: 344px;
+        height: 49px;
+        left: 90px;
+        top: 1924px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 66px;
+
+        color: #000000;
+    }
+    h2{
+        position: absolute;
+        width: 355px;
+        height: 61px;
+        left: 399px;
+        top: 320px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 79px;
+
+        color: #000000;
+    }
+    #p1{
+        position: absolute;
+        width: 236px;
+        height: 42px;
+        left: 412px;
+        top: 420px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 40px;
+
+        color: #000000; 
+    }
+    #p2{
+        position: absolute;
+        width: 236px;
+        height: 42px;
+        left: 629px;
+        top: 420px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 40px;
+
+        color: #000000; 
+    }
+    #p3{
+        position: absolute;
+        width: 236px;
+        height: 42px;
+        left: 830px;
+        top: 420px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 40px;
+
+        color: #000000; 
+    }
+   
+   
+</style>
+{% endblock %}
+{% block 'content' %}
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      
+    
+    <div class="card" >
+        <img class="card-img-bottom rounded-circle" src="/static/image5.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"> BIENVENUE SUR VOTRE PAGE AWA </p>
+        </div>
+      </div>
+      <h2>AWA DIOP</h2>
+      <p id="p1">70 001 23 44</p>
+      <p id="p2">De l'ESMT</p>
+      <p id="p3">hh@hd.jckl</p>
+
+   
+</header>
+<body>
+    
+      <form action="" method="post">
+          <div class="container">
+            <h3>Ajout d'épreuve</h3>
+
+            <label for="" id="matiere" >Matiere</label>
+            <input type="text" id="inputMatiere">
+
+            <label for="" id="filiere" >Filiere</label>
+            <input type="text" id="inputFiliere">
+
+            <label for="" id="annee" >Année</label>
+            <input type="number" id="inputAnnee">
+            
+            <label for="" id="categorie" >Catégorie</label>
+            <input type="number" id="inputAnnee">
+            <select class="form-select">
+                <option selected></option>
+                <option value="1">Epreuve</option>
+                <option value="2">Correction</option>
+                
+              </select>
+
+            <label for="" id="fichier" >Fichier</label>
+            <button id="upload">Upload</button>
+
+            <button type="submit"><a id="ajouter" href=""></a>Ajouter</button>
+          </div>
+      </form>
+      <footer>
+        <div class="container">
+            <span class="retour"><a href="">Retour</a></span>
+        </div>
+    </footer>
+</body>
+
+</html>
+{% endblock %}
