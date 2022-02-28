@@ -1,6 +1,7 @@
 from django import forms
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect, render
+from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from ProjetDjango.settings import LOGIN_REDIRECT_URL
 from books.forms import UserForm

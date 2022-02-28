@@ -3,6 +3,8 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm,ReadOnlyPasswordHashField
 
+from django.forms import ModelForm
+from books.models import Document
 User = get_user_model()
 
 class RegisterForm(forms.ModelForm):
@@ -90,6 +92,8 @@ class UserAdminChangeForm(forms.ModelForm):
         return self.initial["password"]   
     
 class DocumentForm(forms.Form):
+    class Meta:
+        model = Document
     matiere = forms.CharField(
         max_length=30,
         required=True,
