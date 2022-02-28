@@ -5,16 +5,16 @@ from django.contrib.auth.models import (
 
 class Document(models.Model):
     catchoice= [
-        ('epreuve', 'Epreuve'),
-        ('correction', 'Correction'),
+        ('Epreuve', 'Epreuve'),
+        ('Correction', 'Correction'),
         ]
     matiere=models.CharField(max_length=30)
     classe=models.CharField(max_length=30)
     professeur=models.CharField(max_length=40)
-    categorie=models.CharField(max_length=30,choices=catchoice,default='epreuve')
+    categorie=models.CharField(max_length=10,choices=catchoice,default='Epreuve')
     fichier=models.FileField()
     def __str__(self):
-        return str(self.name)+"["+str(self.classe)+']'
+        return str(self.categorie)+" "+str(self.matiere)+"["+str(self.classe)+']'
 
 
 # class Newsletter(models.Model):
@@ -81,7 +81,7 @@ class User(AbstractBaseUser):
         unique=True,
     )
     is_active = models.BooleanField(default=True)
-    is_from_esmt = models.BooleanField()
+    is_from_esmt = models.BooleanField(default=True)
     staff = models.BooleanField(default=False) # a admin user; non super-user
     admin = models.BooleanField(default=False) # a superuser
 

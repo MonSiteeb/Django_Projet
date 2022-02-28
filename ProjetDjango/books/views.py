@@ -61,6 +61,7 @@ def inscription(request,*args, **kwargs):
                 template_name=template_name,
                 context=context
             )
+<<<<<<< HEAD
 
 def document(request):
     #now it is empty book form for sending to html
@@ -76,3 +77,11 @@ def document(request):
 
 def logout(request):
     return render(request,'registration/logout.html')
+=======
+def liste_docs(request,*args, **kwargs):
+    docs = Document.objects.all()
+    context = {
+        'docs' : docs,
+               }
+    return render(request, 'liste_documents.html', context=context)
+>>>>>>> dedcf0229dcc37ae584c45ddd3b097f0481d6925

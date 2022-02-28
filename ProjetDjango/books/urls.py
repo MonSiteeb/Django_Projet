@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from books.views import index, subscribe, inscription, document, logout
+=======
+from books.views import index, subscribe, inscription, liste_docs
+>>>>>>> dedcf0229dcc37ae584c45ddd3b097f0481d6925
 from django.urls import path
 from django.conf.urls import include
 
@@ -6,6 +10,7 @@ from django.conf.urls import include
 urlpatterns = [
     # path('', views.index, name='index'),
     path("",index,name="index"),
+    path("documents",liste_docs,name="documents"),
     path('inscription',inscription,name='inscription'),
     path('contact',subscribe,
          name='contact'),

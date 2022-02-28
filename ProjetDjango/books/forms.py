@@ -1,3 +1,4 @@
+from cProfile import label
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm,ReadOnlyPasswordHashField
@@ -154,6 +155,34 @@ class Subscribe(forms.Form):
     )
 
 class UserForm(UserCreationForm):
+    email = forms.EmailField(
+        label='Email',
+        required=True
+    )
+    password1 = forms.CharField(
+        label= 'Mot de passe',
+        help_text= "<ul><li>Votre mot de passe ne doit pas être similaire à vos infos personnelles</li><li>Votre mot de passe doit contenir 8 caractères au minimum.</li><li>Votre mot de passe ne doit pas être commun.</li><li>Votre mot de passe ne peut pas être entièrement numérique.</li>",
+        required=True,
+        widget= forms.PasswordInput(
+            attrs= {
+                'type' : 'password'
+            }
+        )
+    )
+    password2 = forms.CharField(
+        label= 'Confirmer le mot de passe',
+        help_text= "Entrez le même mot de passe",
+        required=True,
+        widget= forms.PasswordInput(
+            attrs= {
+                'type' : 'password'
+            }
+        )
+    )
+    is_from_esmt = forms.BooleanField(
+        label= "Êtes-vous de l'ESMT ?",
+        required=False
+    )
     class Meta(UserCreationForm.Meta):
         model = get_user_model()
-        fields = ('email', 'is_from_esmt')
+        fields = ('email', 'password1','password2', 'is_from_esmt')
