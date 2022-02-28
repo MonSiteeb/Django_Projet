@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = '/accueil'
+LOGIN_REDIRECT_URL = '/'
 
 
 # Application definition
