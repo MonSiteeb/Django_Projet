@@ -63,18 +63,56 @@ def inscription(request,*args, **kwargs):
                 context=context
             )
 
-def document(request): 
-    # ajout document
-    #now it is empty book form for sending to html
-    form=DocumentForm()
-    if request.method=='POST':
-        #now this form have data from html
-        form=DocumentForm(request.POST , request.FILES)
-        if form.is_valid():
-            form.save()
-            return render(request,'docajouter.html',{'form':form})
-    return render(request,'document.html',{'form':form})
+# def document(request): 
+#     # ajout document
+#     #now it is empty book form for sending to html
+#     form=DocumentForm()
+#     if request.method=='POST':
+#         #now this form have data from html
+#         form=DocumentForm(request.POST , request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return render(request,'docajouter.html',{'form':form})
+#     return render(request,'document.html',{'form':form})
 
+
+def document(request, *args, **kwargs):
+    template_name = 'document.html'
+    
+    obj = Document()
+
+    if request.method == 'GET':
+        form = DocumentForm()
+        context = {
+            'form': form
+        }
+
+        return render(
+            request=request,
+            template_name=template_name,
+            context=context
+        )
+
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        context = {
+            'form': form
+        }
+        if form.is_valid():
+            print(form.cleaned_data)
+            obj.matiere = form.cleaned_data.get('matiere')
+            obj.classe = form.cleaned_data.get('classe')
+            obj.professeur = form.cleaned_data.get('professeur')
+            obj.categorie = form.cleaned_data.get('type')
+            obj.fichier = form.cleaned_data.get('fichier')
+            obj.save()
+            redirect('index')
+        return render(
+    
+        request=request,
+            template_name=template_name,
+            context=context
+        )
 
 def logout(request):
     return render(request,'registration/logout.html')
