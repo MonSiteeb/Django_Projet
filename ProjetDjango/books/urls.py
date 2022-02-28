@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 from books.views import index, subscribe, inscription, document, logout
-=======
 from books.views import index, subscribe, inscription, liste_docs
->>>>>>> dedcf0229dcc37ae584c45ddd3b097f0481d6925
 from django.urls import path
 from django.conf.urls import include
 
