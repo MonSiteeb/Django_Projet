@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% block 'title' %}
+Page de Connexion
+{% endblock %}
+
+{% block 'css' %}
+<style>
+    body{
+        position: relative;
+        width: 1440px;
+        height: 1024px;
+
+        background: #FFFFFF;
+    }
+   
+    #books{
+    position: absolute;
+    width: 132px;
+    height: 51px;
+    left: 59px;
+    top: 93px;
+
+    font-family: Rock 3D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 51px;
+
+    color: #FFFFFF;
+    border: 1px solid #000000;
+   }
+  
+    h4 {
+        position: absolute;
+        width: 295px;
+        height: 71px;
+        left: 188px;
+        top: 269px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 50px;
+        line-height: 66px;
+
+        color: #000000; 
+    }
+    #email{
+        position: absolute;
+        width: 141px;
+        height: 33px;
+        left: 157px;
+        top: 370px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 30px;
+        line-height: 40px;
+
+        color: #000000;
+    }
+    #inputEmail{
+        position: absolute;
+        width: 431px;
+        height: 63px;
+        left: 120px;
+        top: 420px;
+
+        background: #FFFFFF;
+        border: 4px solid #000000;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    #password{
+        position: absolute;
+        width: 247px;
+        height: 33px;
+        left: 157px;
+        top: 504px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 30px;
+        line-height: 40px;
+
+        color: #000000;
+    }
+    #inputPassword{
+        position: absolute;
+        width: 431px;
+        height: 64px;
+        left: 120px;
+        top: 545px;
+
+        background: #FFFFFF;
+        border: 4px solid #000000;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    button{
+        position: absolute;
+        width: 197px;
+        height: 42px;
+        left: 225px;
+        top: 649px;
+
+        background: #F6E7D6;
+        border-radius: 20px;
+    }
+    #sinscrire{
+        position: absolute;
+        width: 123px;
+        height: 26px;
+        left: 120px;
+        top: 691px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 20px;
+        line-height: 26px;
+
+        color: #000000;
+    }
+    #image{
+        position: absolute;
+        width: 1147px;
+        height: 1024px;
+        left: 665px;
+        top: 0px;
+        background: url(/static/image3.jpeg);
+        border-radius: 363px;
+    }
+    span{
+        position: absolute;
+        width: 176px;
+        height: 24px;
+        left: 32px;
+        top: 945px;
+
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 30px;
+        line-height: 40px;
+
+        color: #9F7177;
+    }
+        
+</style>
+{% endblock %}
+
+{% block 'content' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="#" id="books">.Books</a>
+    </header>
+    <br>
+        <h4>Connexion</h4>
+
+        <form action="" method="POST">
+            <div class="container" >
+                
+                <label for="" id="email" >Email</label>
+                <input type="email" id="inputEmail">
+
+                <label for="" id="password">Password</label>
+                <input type="password" id="inputPassword">
+
+                <button type="submit">Login</button>
+                <label for="" id="sinscrire"><a href="inscription">S'inscrire</a></label>
+            </div>
+            <div class="container">
+                <img src="/static/image3.jpeg" alt="" class="rounded float-start" id="image">
+
+            </div>
+        </form>
+    </body>
+    <footer>
+        <div class="container">
+            <span class="retour"><a href="">Retour</a></span>
+        </div>
+    </footer>
+</html>
+{% endblock %}
