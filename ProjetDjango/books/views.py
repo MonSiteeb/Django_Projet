@@ -116,6 +116,10 @@ def document(request, *args, **kwargs):
 
 def logout(request):
     return render(request,'registration/logout.html')
+
+def login(request):
+    return render(request,'registration/login.html')
+
 def liste_docs(request,*args, **kwargs):
     docs = Document.objects.all()
     context = {
