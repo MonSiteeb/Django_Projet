@@ -1,5 +1,5 @@
 
-from books.views import index, subscribe, inscription, document, logout
+from books.views import index, subscribe, inscription, document, logout,login
 from books.views import index, subscribe, inscription, liste_docs
 from django.urls import path
 from django.conf.urls import include
@@ -18,6 +18,7 @@ urlpatterns = [
     path('document',document,name='document'),
 
     path('logout',logout,name='logout'),
+    path('login',login,name='login'),
 
 ]
 

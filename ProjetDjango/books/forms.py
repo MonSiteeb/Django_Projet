@@ -10,7 +10,6 @@ class RegisterForm(forms.ModelForm):
     The default 
 
     """
-
     password = forms.CharField(widget=forms.PasswordInput)
     password_2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
 
