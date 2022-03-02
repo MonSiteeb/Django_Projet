@@ -1,0 +1,61 @@
+html,body{
+    padding:0;
+    margin:0;
+}
+
+#books{
+    margin:1%;
+    font-size: 20px;
+    font-family: Rock 3D;
+    text-decoration:none;
+    color:#000000;
+}
+
+h2{
+    font-family: Roboto Slab;
+    font-style: italic;
+    font-size: 50px;
+}
+
+.put{
+    border:4px solid #F6E7D6;
+    border-color: #F6E7D6;
+    border-radius: 20px;  
+}
+
+label{
+    font-weight: bold;
+}
+
+#button{
+    margin: 2px;
+    width: 100%;
+    height: auto;
+    background: #F6E7D6;
+    border-radius: 20px;
+    border-color: #F6E7D6;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#retour{
+    display:block;
+    text-align: right;
+    text-decoration:none;
+    margin: 1%;
+    color: #9F7177;
+    font-size: 18px;
+}
+
+.form-check{
+    display:initial;
+    text-align:center;
+}
+
+#connexion{
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Roboto Slab;
+}

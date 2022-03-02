@@ -3,8 +3,6 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm,ReadOnlyPasswordHashField
 
-from django.forms import ModelForm
-from books.models import Document
 User = get_user_model()
 
 class RegisterForm(forms.ModelForm):
@@ -92,8 +90,6 @@ class UserAdminChangeForm(forms.ModelForm):
         return self.initial["password"]   
     
 class DocumentForm(forms.Form):
-    class Meta:
-        model = Document
     matiere = forms.CharField(
         max_length=30,
         required=True,
@@ -141,11 +137,11 @@ class DocumentForm(forms.Form):
     
     fichier = forms.FileField(
         required=True,
-        # widget=forms.Select(
-        #     attrs={
-        #         'type':'upload'
-        #     }
-        # )
+        widget=forms.Select(
+            attrs={
+                'type':'upload'
+            }
+        )
     )
 
 class Subscribe(forms.Form):
@@ -153,15 +149,62 @@ class Subscribe(forms.Form):
         required=True,
         widget=forms.EmailInput(
             attrs={
-                'type':'email'
+                'type':'email',
+                'id': 'input'
             }
         )
     )
 
 class UserForm(UserCreationForm):
+    nom = forms.CharField(
+        label="Nom",
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                'type':'text',
+                'class':'put',
+            }
+        )
+    )
+    prenom = forms.CharField(
+        label="Prenom",
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                'type':'text',
+                'class':'put',
+            }
+        )
+    )
     email = forms.EmailField(
         label='Email',
-        required=True
+        required=True,
+        widget=forms.EmailInput(
+            attrs={
+                'type':'email',
+                'class':'put',
+            }
+        )
+    )
+    sexe = forms.ChoiceField(
+        required=True,
+        choices=[('Femme', 'F'), ('Homme', 'H')],
+        widget=forms.RadioSelect(
+            attrs={
+                'type':'radio',
+            }
+        )
+    )
+    
+    numero = forms.CharField(
+        label="Numero",
+        required=True,
+        widget=forms.NumberInput(
+            attrs={
+                'type':'number',
+                'class':'put',
+            }
+        )
     )
     password1 = forms.CharField(
         label= 'Mot de passe',
@@ -169,24 +212,28 @@ class UserForm(UserCreationForm):
         required=True,
         widget= forms.PasswordInput(
             attrs= {
-                'type' : 'password'
+                'type' : 'password',
+                'class' : 'put'
             }
         )
     )
+    
     password2 = forms.CharField(
         label= 'Confirmer le mot de passe',
         help_text= "Entrez le même mot de passe",
         required=True,
         widget= forms.PasswordInput(
             attrs= {
-                'type' : 'password'
+                'type' : 'password',
+                'class' : 'put'
             }
         )
     )
     is_from_esmt = forms.BooleanField(
         label= "Êtes-vous de l'ESMT ?",
-        required=False
+        required=False,
+        
     )
     class Meta(UserCreationForm.Meta):
         model = get_user_model()
-        fields = ('email', 'password1','password2', 'is_from_esmt')
+        fields = ('nom','prenom','email','numero','sexe','password1','password2', 'is_from_esmt')

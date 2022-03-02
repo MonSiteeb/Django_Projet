@@ -1,0 +1,186 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    background-color: #F6E7D6;
+}
+
+#table{
+    position: absolute;
+    width: 426px;
+    left: 30px;
+    top: 10px;
+    bottom: 10px;
+    background: #000000;
+    border-radius: 30px;
+}
+
+.text1{
+    position: absolute;
+    height: 86px;
+    left: 20px;
+    top: 5px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    color: #FFFFFF;
+}
+
+#text1_1{
+    top: 60px;
+
+}
+
+#text2{
+    position: absolute;
+    left: 20px;
+    top: 155px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    /* line-height: 40px; */
+    color: #FFFFFF;
+}
+
+#a1, #a2, #a3, #a4{
+    position: absolute;
+    left: 15%;
+    right: 0.01%;
+    top: 48%;
+    bottom: 0%;   
+}
+
+#a2{
+    top: 55%;
+}
+
+#a3{
+    top: 62%;
+}
+
+#p1, #p2, #p3{
+    position: absolute;
+    left: 22%;
+    color: #FFFFFFFF;
+    top: 48%;
+    font-family: Roboto Slab;
+    font-size: 20px;
+}
+
+#p2{
+    top: 55%;
+}
+
+#p3{
+    top: 62%;
+}
+
+img{
+    width: 20px;
+
+}
+
+#text3{
+    position: absolute;
+    left: 35%;
+    top: 75%;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+#a4{
+    top: 80%;
+    left: 20%;
+}
+
+#a5, #a6, #a7{
+    position: absolute;
+    left: 30%;
+    right: 0.01%;
+    top: 42%;
+    bottom: 0%;
+    top: 80%;
+}
+
+#a6{
+    left: 40%;
+}
+
+#a7{
+    left: 50%;
+}
+
+.img0{
+    width: 35px;
+}
+
+#news{
+    position: absolute;
+    height: 86px;
+    left: 700px;
+    top: 50px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 79px;
+    color: #000000;
+}
+
+#trait{
+    position: absolute;
+    width: 150px;
+    height: 0px;
+    left: 740px;
+    top: 120px;
+    border: 2px solid #000000;
+    border-radius: 15%;
+}
+
+form{
+    position: absolute;
+    left: 600px;
+    top: 200px;
+    font-weight: bold;
+}
+
+button{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 70px;
+    top: 200px;
+    background: #000000;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 10px;
+}
+
+#retour{
+    position: absolute;
+    height: 42px;
+    left: 90%;
+    top: 570px;
+    color: #9F7177;
+    font-weight: bold;
+}
+
+#input{
+    width: 500px;
+    padding: 0px 0;
+    resize: none;
+    font-size: 18px;
+    color: #000000;
+    border: none;
+    border-bottom: 2px solid #000000;
+    outline: none;
+    background: #F6E7D6;    
+}
+

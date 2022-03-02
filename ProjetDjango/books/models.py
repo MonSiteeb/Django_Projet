@@ -80,6 +80,10 @@ class User(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
+    nom = models.CharField(max_length=20,default='Doe')
+    prenom = models.CharField(max_length=30,default='John')
+    sexe = models.CharField(max_length=10,default='H')
+    numero = models.CharField(max_length=30,default='null')
     is_active = models.BooleanField(default=True)
     is_from_esmt = models.BooleanField(default=True)
     staff = models.BooleanField(default=False) # a admin user; non super-user

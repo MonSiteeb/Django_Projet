@@ -13,14 +13,11 @@ urlpatterns = [
 
     path('inscription',inscription,name='inscription'),
     
-    path('contact',subscribe,
-         name='contact'),
+    path('contact',subscribe,name='contact'),
     # ajout de document
     path('document',document,name='document'),
 
     path('logout',logout,name='logout'),
-
-
 
 ]
 

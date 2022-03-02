@@ -1,0 +1,74 @@
+{% load static%}
+
+{% load crispy_forms_tags %}
+
+<!-- {% csrf_token %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/inscription.css' %}" type="text/css" >
+</head>
+<body>
+  <a href="{% url 'index' %}" id="books">.books</a>
+  <div class="container">
+    <h2 class="d-flex justify-content-center">Inscription</h2>
+    <div class="d-flex justify-content-center">
+      {% if form.errors %}
+        <p>Votre adresse mail ou mot de passe est incorecte. Réessayer.</p>
+      {% endif %}
+      
+      <form method="post">
+        {% csrf_token %} 
+        <div class="row">
+          <div class="col">
+            {{form.nom|as_crispy_field}}
+          </div>
+          <div class="col">
+            {{form.prenom|as_crispy_field}}
+          </div> 
+        </div>
+
+        <div class="row">
+          <div class="col">
+            {{form.email|as_crispy_field}}
+          </div>
+          <div class="col">
+            {{form.numero|as_crispy_field}}
+          </div> 
+        </div>
+
+        <div class="row">
+          <div class="col">
+            {{form.sexe|as_crispy_field}}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            {{form.password1|as_crispy_field}}
+          </div>
+          <div class="col">
+            {{form.password2|as_crispy_field}}
+          </div> 
+        </div>
+
+        <div class="row">
+          {{form.is_from_esmt|as_crispy_field}}
+        </div>
+        <input class="btn btn-primary" type="submit" value="S'inscrire" id="button" />
+        <a href="" id="connexion">Connexion</a>
+      </form>
+    </div>
+    
+  </div>
+  <a href="{% url 'index' %}" id="retour">Retour</a>
+
+  
+</body>
+</html>
+

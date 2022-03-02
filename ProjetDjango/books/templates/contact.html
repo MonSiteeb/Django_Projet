@@ -1,27 +1,74 @@
+{% load static%}
 <!DOCTYPE html>
 <html>
 <head>
-         <title>DataFlair send email</title>
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}" type="text/css" >
 </head>
 <body>
-    <center>
-        <h1 class = 'alert alert-success'>  </h1>
-        <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 50px;'>DataFlair Django Tutorials
-    </h3>
-    <form method="POST">
-        {% load crispy_forms_tags %}
-        <!-- Very Important csrf Token -->
-        {% load crispy_forms_tags %}
-        {% csrf_token %}
-        <div class = "form-group">
-            <p>
+    <div id="table">
+        <p class="text1">Pour nous</p>
+        <p class="text1" id="text1_1">Contacter</p>
+        <p id="text2">Voici nos coordonnées si vous voulez nous contacter, nous sommes à votre service 24h/24h 7jours/7jours.</p>
+        <div>
+            <div>
+                <a href="#" id="a1">
+                    <img src="{% static 'images/imagesContact/Vector.png' %}" alt="">
+                </a>
+                <p id="p1">00221 704566749</p>
+            </div>
+
+            <div>
+                <a href="#" id="a2">
+                    <img src="{% static 'images/imagesContact/Vector1.png' %}" alt="">
+                </a>
+                <p id="p2">books@gmail.com</p>
+            </div>
+
+            <div>
+                <a href="#" id="a3">
+                    <img src="{% static 'images/imagesContact/Vector2.png' %}" alt="">
+                </a>
+                <p id="p3">Colobane, Dakar</p>
+            </div>
+        </div>
+
+        <div>
+            <p id="text3">Follow us</p>
+            <a href="#" id="a4">
+                <img src="{% static 'images/imagesContact/Vector3.png' %}" class="img0">
+            </a>
+
+            <a href="#" id="a5">
+                <img src="{% static 'images/imagesContact/Vector4.png' %}" class="img0">
+            </a>
+
+            <a href="#" id="a6">
+                <img src="{% static 'images/imagesContact/Vector5.png' %}" class="img0">
+            </a>
+
+            <a href="#" id="a7">
+                <img src="{% static 'images/imagesContact/Vector6.png' %}" class="img0">
+            </a>
+        </div>
+    </div>
+
+    <div>
+        <p id="news">Newsletter</p>
+        <div id="trait"></div>
+        <form method="POST">
+            {% load crispy_forms_tags %}
+            <!-- Very Important csrf Token -->
+            {% load crispy_forms_tags %}
+            {% csrf_token %}
             <h3>{{ form|crispy }}</h3>
-        </p>
-            <br>
-            <input type="submit" name="Subscribe" class = 'btn btn-primary btn-lg'>
-                </div>
-            </form>
-        </center>
+            <button type="submit" name="Subscribe">Subscribe</button>
+        </form>
+        <a href="{% url 'index' %}" id="retour">Retour</a>
+    </div>
 </body>
 </html>
