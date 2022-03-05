@@ -1,12 +1,63 @@
-#books{
-    margin:1%;
-    font-size: 20px;
-    font-family: Rock 3D;
-    text-decoration:none;
-    color:#000000;
-}
-img{
-    display:block;
-    text-align:end;
+html,body{
+    margin:0;
+    padding:0;
+  }
 
-}
+  #book{
+    position: absolute;
+    text-decoration: none;
+    left:2%;
+    color: #000000;
+    font-size:20px;
+    top:2%;
+  }
+
+
+  #formulaire{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 30%;
+  }
+
+  img{
+    position: absolute;
+    height:100%;
+    max-width: 50%;
+    border-top-left-radius: 35%;
+    border-bottom-left-radius: 35%;
+    top: 0;
+    left: 50%;
+  }
+
+  .form-control{
+    border: 3px solid black;
+    border-radius: 15px;
+  }
+
+  label{
+    margin-left: 5%;
+  }
+
+  p{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 50px;
+  }
+
+  button{
+    background-color:#F6E7D6;
+    border-radius: 30px;
+    width: 50%;
+    border-color: #F6E7D6;
+    font-size: 15px;
+    font-weight: bold;  
+    margin: auto;
+
+  }
+
+  #inscription{
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+  }
