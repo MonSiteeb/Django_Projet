@@ -6,9 +6,14 @@ from django.core.mail import send_mail
 from ProjetDjango.settings import LOGIN_REDIRECT_URL
 from books.forms import UserForm
 from django.contrib.auth import login
+from django.contrib.auth import logout
+
 from ProjetDjango.settings import EMAIL_HOST_USER
 from books.forms import DocumentForm,Subscribe
 from books.models import Document, User
+from django.contrib import auth
+
+
 
 
 # Create your views here.
@@ -58,10 +63,10 @@ def inscription(request,*args, **kwargs):
             login(request,user)
             redirect(LOGIN_REDIRECT_URL)
         return render(
-                request=request,
-                template_name=template_name,
-                context=context
-            )
+                request, 'afterlogin.html',
+                # template_name=template_name,
+            {'form':form})
+            
 
 # def document(request): 
 #     # ajout document
@@ -114,11 +119,10 @@ def document(request, *args, **kwargs):
             context=context
         )
 
-def logout(request):
-    return render(request,'registration/logout.html')
 
-def login(request):
-    return render(request,'registration/login.html')
+
+def afterlogin(request):
+        return render(request,'afterlogin.html')
 
 def liste_docs(request,*args, **kwargs):
     docs = Document.objects.all()
@@ -126,3 +130,7 @@ def liste_docs(request,*args, **kwargs):
         'docs' : docs,
                }
     return render(request, 'liste_documents.html', context=context)
+
+
+# def logout(request):
+#     return render(request,'index.html')
